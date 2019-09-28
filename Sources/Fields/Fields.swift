@@ -10,8 +10,8 @@ import SwiftUI
 
 @available(iOS 13.0, *)
 public struct NumberField: View {
-    var title: String
-    @Binding var value: Int {
+    public var title: String
+    @Binding public var value: Int {
         didSet {
             self.interalValue = "\(value)"
         }
