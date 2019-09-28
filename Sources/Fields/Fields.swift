@@ -18,6 +18,11 @@ public struct NumberField: View {
     }
     @State private var interalValue: String = ""
     
+    public init(title: String, value: Binding<Int>) {
+        self.title = title
+        self.value = value
+    }
+    
     public var body: some View {
         TextField(title, text: $interalValue)
             .keyboardType(.numberPad)
