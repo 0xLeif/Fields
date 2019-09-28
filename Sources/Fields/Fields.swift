@@ -20,7 +20,7 @@ public struct NumberField: View {
     
     public init(title: String, value: Binding<Int>) {
         self.title = title
-        self.value = value
+        self._value = value
     }
     
     public var body: some View {
