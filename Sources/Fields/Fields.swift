@@ -28,3 +28,24 @@ public struct NumberField: View {
             .keyboardType(.numberPad)
     }
 }
+
+@available(iOS 13.0, *)
+public struct DecimalField: View {
+    public var title: String
+    @Binding public var value: Double {
+        didSet {
+            self.interalValue = "\(value)"
+        }
+    }
+    @State private var interalValue: String = ""
+    
+    public init(title: String, value: Binding<Double>) {
+        self.title = title
+        self._value = value
+    }
+    
+    public var body: some View {
+        TextField(title, text: $interalValue)
+            .keyboardType(.decimalPad)
+    }
+}
